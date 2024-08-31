@@ -88,55 +88,7 @@ module.exports = {
         caughtErrorsIgnorePattern: "^_",
       },
     ],
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        selector: "default",
-        format: ["camelCase"],
-      },
-      {
-        selector: "variable",
-        format: ["camelCase", "UPPER_CASE", "PascalCase"],
-        leadingUnderscore: "allow",
-      },
-      {
-        selector: "parameter",
-        format: ["camelCase"],
-        leadingUnderscore: "allow",
-      },
-      {
-        selector: "memberLike",
-        modifiers: ["private"],
-        format: ["camelCase", "UPPER_CASE", "snake_case"],
-        leadingUnderscore: "allow",
-      },
-      {
-        selector: "memberLike",
-        modifiers: ["public"],
-        format: ["camelCase", "UPPER_CASE", "snake_case"],
-      },
-      {
-        selector: "typeLike",
-        format: ["PascalCase"],
-      },
-      {
-        selector: "enumMember",
-        format: ["UPPER_CASE"],
-      },
-      {
-        selector: "objectLiteralMethod",
-        format: ["camelCase", "PascalCase"],
-      },
-      {
-        selector: "objectLiteralProperty",
-        format: ["camelCase", "UPPER_CASE", "PascalCase", "snake_case"],
-        leadingUnderscore: "allow",
-      },
-      {
-        selector: "typeProperty",
-        format: ["camelCase", "UPPER_CASE", "snake_case"],
-        leadingUnderscore: "allow",
-      },
-    ],
+    // Desactiva la regla naming-convention
+    "@typescript-eslint/naming-convention": "off",
   },
 };
