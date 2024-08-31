@@ -88,7 +88,21 @@ module.exports = {
         caughtErrorsIgnorePattern: "^_",
       },
     ],
-    // Desactiva la regla naming-convention
     "@typescript-eslint/naming-convention": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        // Ajusta las opciones según tus necesidades
+        printWidth: 80,
+        tabWidth: 2,
+        useTabs: false,
+        semi: true,
+        singleQuote: true,
+        trailingComma: "es5",
+        bracketSpacing: true,
+        jsxBracketSameLine: false,
+        arrowParens: "always",
+      },
+    ],
   },
 };
