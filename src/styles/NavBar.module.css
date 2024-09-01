@@ -1,0 +1,144 @@
+.navbar, .opennavbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  color: var(--navbar-color);
+  background-color: var(--background-navbar);
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  overflow-x: hidden;
+  padding: 22px 0;
+}
+
+.opennavbar::after {
+  position: fixed;
+  top: 87px;
+  left: 0;
+  content: "";
+  height: calc(100vh - 87px);
+  background-color: var(--backdrop-background);
+  backdrop-filter: blur(4px);
+  width: 100%;
+  z-index: 5;
+}
+
+.links {
+  position: absolute;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
+  justify-content: flex-start;
+  right: -400px;
+  top: 87px;
+  width: 100%;
+  height: calc(100vh - 87px);
+  background-color: var(--background-navbar);
+  display: none;
+  z-index: 10;
+}
+
+.openlinks {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  top: 87px;
+  width: 100%;
+  height: calc(100vh - 87px);
+  animation: fadeIn 0.5s ease-in;
+  z-index: 10;
+}
+
+.principallinks {
+	display: flex;
+	flex-direction: column;
+	gap: 64px;
+	align-items: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.links a, .openlinks a {
+  text-decoration: none;
+  color: var(--navbar-color);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.openlinks a {
+  font-size: 38px;
+}
+
+.openlinks .activesession svg {
+  height: 64px;
+  width: 64px;
+}
+
+.activesession svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+  width: 42px;
+  background-color: #fff394;
+  border-radius: 50%;
+  color: #ad5f00;
+}
+
+.togglemenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  padding-right: 30px;
+}
+
+@media (min-width: 640px) {
+}
+
+@media (min-width: 768px) {
+  .togglemenu {
+    display: none;
+  }
+
+  .links {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+    align-items: center;
+    flex: 1 !important;
+    justify-content: space-between;
+    right: auto;
+    top: auto;
+    height: auto;
+  }
+
+  .principallinks {
+    flex-direction: row;
+    padding-left: 88px;
+    gap: 88px;
+  }
+
+  .activesession svg {
+  	margin-right: 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+}

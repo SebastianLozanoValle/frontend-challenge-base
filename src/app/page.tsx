@@ -1,9 +1,12 @@
-import RootLayout from "./layout";
+import { HeroBanner } from "@/components/home/HeroBanner";
+import { MovieGalery } from "@/components/home/MovieGalery";
+import styles from "@/styles/Home.module.css"
 
 export default function home(): JSX.Element {
   return (
-    <RootLayout>
-      <h1>Welcome to the Inlaze Next.js Starter!</h1>
-    </RootLayout>
+    <>
+      <HeroBanner />
+      <MovieGalery />
+    </>
   );
 }

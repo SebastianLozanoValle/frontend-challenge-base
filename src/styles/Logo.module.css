@@ -1,0 +1,7 @@
+.logocontainer {
+  padding-left: 30px;
+}
+
+.path {
+  fill: var(--icon-color);
+}

@@ -1,0 +1,67 @@
+.moviecard{
+	width: 200px;
+	height: 335px;
+	background-color: var(--movie-card-background);
+	border-radius: 8px;
+	font-family: "Inter", sans-serif;
+}
+
+.imagecontainer {
+	position: relative;
+	width: 200px;
+	height: 223px;
+}
+
+.imagecontainer img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 223px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.moviecardcontent {
+	padding: 12px 6px 4px 6px;
+	display: flex;
+	height: 96px;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.moviecardcontent h3 {
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.moviecardcontent span, .moviecardcontent p {
+	font-size: 9px;
+	font-weight: 400;
+}
+
+.reactionscontainer {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 40px;
+	width: 100%;
+}
+
+.reaction {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	align-items: center;
+}
+
+.moviecardpercentagecontainer {
+	height: 25px;
+	width: 25px;
+}
+
+.moviecardpercentagecontainer svg {
+	fill: var(--text-color);
+}

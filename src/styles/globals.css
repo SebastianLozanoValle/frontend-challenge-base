@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --background-color: #ffffff;
+  --background-navbar: #ededed;
+  --navbar-color: #000000;
+  --text-color: #000000;
+  --primary-color: #f0b90b;
+  --icon-color: #000000;
+  --backdrop-background: rgba(255, 255, 255, 0.3);
+  --movie-card-background: #ededed;
+}
+[data-theme='dark'] {
+  --background-color: #444444;
+  --background-navbar: #000000;
+  --navbar-color: #ffffff;
+  --text-color: #ffffff;
+  --primary-color: #f0b90b;
+  --icon-color: #ffffff;
+  --backdrop-background: background-color: rgba(0, 0, 0, 0.3);
+  --movie-card-background: #262626;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+/* Estilos para Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho del scrollbar */
+  height: 12px; /* Altura del scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color); /* Color del fondo del track */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color); /* Color del thumb */
+  border-radius: 10px; /* Bordes redondeados */
+  border: none; /* Espacio alrededor del thumb para que parezca más pequeño */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color); /* Color del thumb cuando está en hover */
+}

@@ -1,0 +1,25 @@
+.boton {
+	position: fixed;
+	bottom: 16px;
+	left: 16px;
+  	background-color: var(--primary-color);
+  	color: var(--text-color);
+  	border: none;
+  	padding: 10px 20px;
+  	cursor: pointer;
+  	border-radius: 4px;
+  	transition: all ease .5s;
+  	z-index: 20;
+}
+
+.moon {
+	display: none;
+}
+
+[data-theme='dark'] .sun {
+	display: none;
+}
+
+[data-theme='dark'] .moon {
+	display: block;
+}
