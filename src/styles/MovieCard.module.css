@@ -4,6 +4,7 @@
 	background-color: var(--movie-card-background);
 	border-radius: 8px;
 	font-family: "Inter", sans-serif;
+	margin: 0 auto;
 }
 
 .imagecontainer {
@@ -49,6 +50,7 @@
 	gap: 40px;
 	width: 100%;
 }
+
 
 .reaction {
 	display: flex;

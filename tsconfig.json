@@ -54,7 +54,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "next.config.js"
-, "src/hooks/useMovies.jsx", "src/components/home/MovieGalery.tsx"  ],
+, "src/hooks/useMovies.jsx", "src/components/home/MovieGalery.tsx", "src/actions/movies-actions.ts"  ],
   "exclude": [
     "node_modules"
   ]

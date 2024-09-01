@@ -38,8 +38,9 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background-color); /* Color del fondo del track */
+  background: var(--movie-card-background); /* Color del fondo del track */
   border-radius: 10px; /* Bordes redondeados */
+  border-top-left-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb {

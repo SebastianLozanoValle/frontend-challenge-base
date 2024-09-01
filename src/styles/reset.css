@@ -59,3 +59,48 @@ button {
 button:focus {
   outline: none;
 }
+
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  border-radius: 0px;
+}
+
+select::-ms-expand {
+  display: none; /* Elimina el icono desplegable en IE y Edge */
+}
+
+option {
+  background: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  appearance: none;
+}

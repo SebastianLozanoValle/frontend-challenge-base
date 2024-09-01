@@ -1,20 +1,218 @@
-.moviescategory {
-	flex: 1;
-	margin-left: auto;
-	padding: 40px 0;
+.loading {
+	display: flex;
+	height: calc(100vh - 87px);
+	justify-content: center;
+	align-items: center;
 }
 
-.moviescategory h2 {
+.galerycontainer {
+	/*display: flex;*/
+	flex-wrap: wrap;
+	gap: 20px;
+	position: relative;
+	justify-content: space-between;
+}
+
+.categoriescontainer {
+	width: 100%;
+	min-height: calc(100vh - 87px);
+}
+
+.filtercontainer {
+	position: sticky;
+	top: 87px;
+	left: 0px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	background-color: var(--movie-card-background);
+	z-index: 5;
+	/*padding: 40px 20px;*/
+	/*padding: 10px;*/
+	align-items: center;
+	min-height: 56px;
+	overflow-y: scroll;
+	max-height: calc(100vh - 87px);
+}
+
+.openclosecontainer {
+	min-height: 56px;
+}
+
+.openclosebtn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 56px;
+}
+
+.closebtn {
+	width: 100%;
+	background-color: var(--movie-card-background);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.openclosebtn svg {
+	margin: auto 0;
+}
+
+.filtercontainer label, .filtercontainer h4 {
+	font-size: 16px;
+	font-weight: 700;
+	font-family: "Inter", sans-serif;
+	padding: 20px 0;
+}
+
+.searchcontainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.inputcontainer {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: #1c1c1c;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	border-bottom: solid 1px #717171 ;
+	width: 228px;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.inputcontainer input {
+	color: white;
+	font-size: 12px;
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	width: calc(100% - 16px);
+}
+
+.inputcontainer button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	height: 100%;
+	padding-right: 15px;
+	align-items: center;
+}
+
+.inputcontainer svg {
+	color: white;
+}
+
+.categoryselectcontainer {
+	width: 228px;
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	margin-bottom: 16px;
+	box-sizing: border-box;
+}
+
+.categoryselectcontainer button {
+	color: white;
+	background-color: #1c1c1c;
+	padding: 15px;
+	text-align: left;
+}
+
+.genrebtn {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: calc(100% - 30px);
+}
+
+.optionscontainer {
+	margin-top: 20px;
+	width: 228px;
+	box-sizing: border-box;
+	padding: 6px;
+	background-color: #1c1c1c;
+	font-weight: 400;
+	font-size: 14px;
+	font-family: "Inter", sans-serif;
+}
+
+.optionscontainer button {
+	padding: 0;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 6px 9px;
+	transition: all .5s ease;
+}
+
+.optionscontainer button:hover {
+	background-color: #454545;
+}
+
+.selectedGenreContainer h2 {
 	font-family: "IBM Plex Sans", sans-serif;
 	font-weight: 700;
 	font-size: 24px;
 	margin-left: 20px;
+	padding: 40px;
 }
 
-.moviecards{
-	display: flex;
-	gap: 20px;
-	overflow-x: scroll;
-	height: auto;
-	padding: 20px 0;
+.moviescolumns {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  gap: 16px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+	.moviescolumns {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 768px) {
+	.galerycontainer {
+		display: flex;
+	}
+
+	.filtercontainer {
+		width: 260px;
+		flex: none;
+		height: calc(100vh - 87px);
+	}
+
+	.categoriescontainer {
+		width: calc(100vw - 300px);
+	}
+
+	.openclosecontainer {
+		display: none;
+	}
+
+	.moviescolumns {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1024px) {
+	.moviescolumns {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1280px) {
+	.moviescolumns {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 1536px) {
+	.moviescolumns {
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+	}
 }
