@@ -5,7 +5,7 @@ import { MovieCard } from "../general/MovieCard";
 import { MovieCategory } from "../movie/MovieCategory";
 
 export const MovieGalery = () => {
-    const apiKey = "e71937fb1ccb3737f2120e5b18735116"
+    const apiKey = process.env.API_KEY
 
     /* Popular, Now Paying, Upcoming, Top Rated Favorites */
     const { movies: actionMovies, loading: loadingAction, error: errorAction, loadMoreMovies: loadMoreAction } = useMovies({
