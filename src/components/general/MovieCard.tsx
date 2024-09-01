@@ -11,7 +11,7 @@ export const MovieCard = ({ movie }: {movie: any}) => {
       }
 
     return (
-        <div className={styles.moviecard} key={movie.uuid}>
+        <div className={styles.moviecard}>
             <div className={styles.imagecontainer}>
                 <Image
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

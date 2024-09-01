@@ -7,7 +7,7 @@ export const MovieCategory = ({ movies, title }: { movies: Array<any>, title: st
             <h2>Action Movies</h2>
             <div className={styles.moviecards}>
                 {movies.map(movie => (
-                    <MovieCard movie={movie} />
+                    <MovieCard movie={movie} key={movie.uuid} />
                 ))}
             </div>
         </section>

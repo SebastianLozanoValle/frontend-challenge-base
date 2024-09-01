@@ -11,7 +11,7 @@ const envSchema = z.object({
   API_KEY: z.string().min(1),
 });
 
-export const env = {
+export const env = envSchema.parse({
   API_URL: process.env.API_URL!,
   API_KEY: process.env.API_KEY!,
-};
+});
