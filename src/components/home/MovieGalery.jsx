@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useState, useEffect } from 'react';
 import { useGenres } from "@/hooks/useGenres";
 import styles from "@/styles/MovieGalery.module.css";
@@ -82,16 +82,16 @@ export const MovieGalery = () => {
 
   const handleSearchClick = () => {
     setKeyword(inputKeyword);
-    setGenre({ value: null, text: "________________________" })
+    setGenre({ value: null, text: "________________________" });
   };
 
   if (loadingGenres || loadingCategories) return <div className={styles.loading}>Loading...</div>;
   if (errorGenres) return <div>Error: {errorGenres.message}</div>;
 
   const handleKeyDown = (event) => {
-    if (event.key == "Enter") {
+    if (event.key === "Enter") {
       setKeyword(inputKeyword);
-      setGenre({ value: null, text: "________________________" })
+      setGenre({ value: null, text: "________________________" });
     }
   }
 
@@ -151,7 +151,7 @@ export const MovieGalery = () => {
           ))
         ) : keyword !== "" ? (
           <div className={styles.selectedGenreContainer}>
-            <h2>Search Results for "{keyword}"</h2>
+            <h2>Search Results for &quot;{keyword}&quot;</h2>
             {categoriesMovies.searchResults?.length === 0 ? (
               <div>No movies found.</div>
             ) : (
