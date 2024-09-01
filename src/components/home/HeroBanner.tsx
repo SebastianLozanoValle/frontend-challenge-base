@@ -7,7 +7,7 @@ import { useTrendMovies } from "@/hooks/useTrendMovies"
 import Image from "next/image";
 
 export const HeroBanner = () => {
-    const apiKey = process.env.API_KEY;
+    const apiKey = "e71937fb1ccb3737f2120e5b18735116";
     const { movies, loading, error }: { movies, loading, error } = useTrendMovies(apiKey);
 
     const [currentMovie, setCurrentMovie]: [currentMovie: any, setCurrentMovie: any] = useState(null);
