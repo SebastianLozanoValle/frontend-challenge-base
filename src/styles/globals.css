@@ -9,6 +9,7 @@
   --icon-color: #000000;
   --backdrop-background: rgba(255, 255, 255, 0.3);
   --movie-card-background: #ededed;
+  --scrollbar-bacground: #ededed;
 }
 [data-theme='dark'] {
   --background-color: #444444;
@@ -19,6 +20,7 @@
   --icon-color: #ffffff;
   --backdrop-background: background-color: rgba(0, 0, 0, 0.3);
   --movie-card-background: #262626;
+  --scrollbar-bacground: #1c1c1c;
 }
 
 body {
@@ -38,13 +40,13 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--movie-card-background); /* Color del fondo del track */
+  background: var(--scrollbar-bacground); /* Color del fondo del track */
   border-radius: 10px; /* Bordes redondeados */
-  border-top-left-radius: 0px;
+  /*border-top-left-radius: 0px;*/
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color); /* Color del thumb */
+  background: var(--text-color); /* Color del thumb */
   border-radius: 10px; /* Bordes redondeados */
   border: none; /* Espacio alrededor del thumb para que parezca más pequeño */
 }

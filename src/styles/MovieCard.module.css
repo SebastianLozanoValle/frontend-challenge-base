@@ -64,6 +64,6 @@
 	width: 25px;
 }
 
-.moviecardpercentagecontainer svg {
+.moviecardpercentagecontainer svg text {
 	fill: var(--text-color);
 }

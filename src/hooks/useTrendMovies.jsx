@@ -23,7 +23,7 @@ export const useTrendMovies = (apiKey) => {
       }
     };
 
-    fetchMovies(); // Realiza la solicitud a la API una sola vez cuando el componente se monta
+    fetchMovies();
   }, [apiKey]);
 
   return { movies, loading, error };

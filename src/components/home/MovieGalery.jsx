@@ -5,9 +5,40 @@ import styles from "@/styles/MovieGalery.module.css";
 import { MovieCategory } from "../movie/MovieCategory";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { MovieCard } from '../general/MovieCard';
+import { MovieCard } from "../general/MovieCard";
+import { useObserver } from "@/hooks/useObserver"
 
 export const MovieGalery = () => {
+
+  const [currentPage, setCurrentPage] = useState(1)
+  const [loadingReFetch, setLoadingReFetch] = useState(false)
+
+  const loadMoreRef = useObserver(() => {
+    console.log('Elemento visible, cargando más contenido...');
+    
+    setTimeout(() => {
+      setCurrentPage(currentPage + 1)
+      console.log(currentPage)
+    }, 1000);
+  });
+
+  useEffect(() => {
+    const reFetchGenreMovies = async () => {
+      setLoadingReFetch(true)
+      const newMovies = await fetchMoviesForGenre(genre.value, currentPage)
+      setCategoriesMovies({
+        ...categoriesMovies,
+        [genre.value]: [...(categoriesMovies[genre.value] || []), ...newMovies]
+      });
+      setLoadingReFetch(false)
+    }
+
+    if (currentPage > 1) {
+      reFetchGenreMovies()
+    }
+    
+  }, [currentPage]);
+
   const [isOpenFilter, setIsOpenFilter] = useState(true);
   const [isOpenOptions, setIsOpenOptions] = useState(false);
   const [genre, setGenre] = useState({ value: null, text: "________________________" });
@@ -19,6 +50,20 @@ export const MovieGalery = () => {
   const apiKey = "e71937fb1ccb3737f2120e5b18735116";
 
   const { genres, loading: loadingGenres, error: errorGenres } = useGenres(apiKey);
+
+  const fetchMoviesForGenre = async (genreId, page = 1) => {
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&page=${page}&with_genres=${genreId}`;
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Failed to fetch movies');
+    }
+    const data = await response.json();
+    return data.results.map((movie) => ({
+      ...movie,
+      uuid: movie.id
+    }));
+  };
+  
 
   useEffect(() => {
     const fetchAllMovies = async () => {
@@ -44,19 +89,6 @@ export const MovieGalery = () => {
   
     const fetchMoviesByKeyword = async (keyword) => {
       const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${keyword}&page=1`;
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error('Failed to fetch movies');
-      }
-      const data = await response.json();
-      return data.results.map((movie) => ({
-        ...movie,
-        uuid: movie.id
-      }));
-    };
-  
-    const fetchMoviesForGenre = async (genreId) => {
-      const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&page=1&with_genres=${genreId}`;
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error('Failed to fetch movies');
@@ -100,7 +132,7 @@ export const MovieGalery = () => {
       <div className={styles.filtercontainer}>
         <div className={styles.openclosecontainer}>
           <button onClick={() => setIsOpenFilter(!isOpenFilter)} className={styles.openclosebtn}>
-            {isOpenFilter ? <IoIosArrowUp /> : <div className={styles.closebtn}><h4>Search Filters</h4><IoIosArrowDown /></div>}
+            {isOpenFilter ? <IoIosArrowUp /> : <div className={styles.openbtn}><h4>Search Filters</h4><IoIosArrowDown /></div>}
           </button>
         </div>
         {isOpenFilter && (
@@ -176,9 +208,16 @@ export const MovieGalery = () => {
                     {categoriesMovies[genre.value]?.map((movie) => (
                       <li key={movie.uuid}><MovieCard movie={movie} /></li>
                     ))}
+                    <li><div ref={loadMoreRef} style={{ height: '20px' }}></div></li>
                   </ul>
                 </div>
               )}
+
+              <div className={styles.loadingrefetch}>Loading...</div>
+              
+              {
+                loadingReFetch && <div className={styles.loadingrefetch}>Loading...</div>
+              }
             </div>
           )
         )}

@@ -1,14 +1,19 @@
 .moviescategory {
 	flex: 1;
 	margin-left: auto;
-	padding: 40px 0;
+	padding-bottom: 40px;
+	position: relative;
 }
 
 .moviescategory h2 {
 	font-family: "IBM Plex Sans", sans-serif;
 	font-weight: 700;
 	font-size: 24px;
-	margin-left: 20px;
+	padding: 40px 60px 80px 40px;
+	position: sticky;
+	top: 87px;
+	z-index: 6;
+	background-color: var(--background-color);
 }
 
 .moviecards{
@@ -17,4 +22,10 @@
 	overflow-x: scroll;
 	height: auto;
 	padding: 20px 0;
+}
+
+@media (min-width: 768px) {
+	.moviescategory h2 {
+		padding: 40px 60px 40px 40px;
+	}
 }
